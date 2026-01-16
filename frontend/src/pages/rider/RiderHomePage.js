@@ -1,15 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { MapPin, Search, Clock, Home as HomeIcon, Briefcase, Star, TrendingUp } from 'lucide-react';
-import { Button } from '../../components/ui/button';
-import { Input } from '../../components/ui/input';
-import { Card, CardContent } from '../../components/ui/card';
-import { Badge } from '../../components/ui/badge';
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '../../components/ui/tabs';
-import MapMock from '../../components/shared/MapMock';
-import { useRideStore } from '../../store/rideStore';
-import { useAuthStore } from '../../store/authStore';
-import { mockSavedLocations, mockRideHistory } from '../../services/mockData';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Card, CardContent } from '@/components/ui/card';
+import { Badge } from '@/components/ui/badge';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs';
+import MapMock from '@/components/shared/MapMock';
+import { useRideStore } from '@/store/rideStore';
+import { useAuthStore } from '@/store/authStore';
+import { mockSavedLocations, mockRideHistory } from '@/services/mockData';
 
 export const RiderHomePage = () => {
   const navigate = useNavigate();

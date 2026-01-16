@@ -1,16 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Power, DollarSign, TrendingUp, Star, Clock, MapPin, Phone } from 'lucide-react';
-import { Button } from '../../components/ui/button';
-import { Card, CardContent, CardHeader, CardTitle } from '../../components/ui/card';
-import { Switch } from '../../components/ui/switch';
-import { Badge } from '../../components/ui/badge';
-import { Progress } from '../../components/ui/progress';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
+import { Switch } from '@/components/ui/switch';
+import { Badge } from '@/components/ui/badge';
+import { Progress } from '@/components/ui/progress';
 import { toast } from 'sonner';
-import { useDriverStore } from '../../store/driverStore';
-import { useAuthStore } from '../../store/authStore';
-import { mockDriverEarnings, mockRideRequest } from '../../services/mockData';
-import MapMock from '../../components/shared/MapMock';
+import { useDriverStore } from '@/store/driverStore';
+import { useAuthStore } from '@/store/authStore';
+import { mockDriverEarnings, mockRideRequest } from '@/services/mockData';
+import MapMock from '@/components/shared/MapMock';
 
 export const DriverDashboardPage = () => {
   const navigate = useNavigate();

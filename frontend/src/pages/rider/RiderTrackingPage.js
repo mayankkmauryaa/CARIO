@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Phone, MessageCircle, Navigation2, Clock, MapPin } from 'lucide-react';
-import { Button } from '../../components/ui/button';
-import { Card, CardContent } from '../../components/ui/card';
-import { Avatar } from '../../components/ui/avatar';
-import { Progress } from '../../components/ui/progress';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Avatar } from '@/components/ui/avatar';
+import { Progress } from '@/components/ui/progress';
+import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import MapMock from '../../components/shared/MapMock';
-import SOSButton from '../../components/shared/SOSButton';
-import RatingDialog from '../../components/shared/RatingDialog';
-import { useRideStore } from '../../store/rideStore';
-import { mockDriver } from '../../services/mockData';
-import wsService from '../../services/websocket';
+import MapMock from '@/components/shared/MapMock';
+import SOSButton from '@/components/shared/SOSButton';
+import RatingDialog from '@/components/shared/RatingDialog';
+import { useRideStore } from '@/store/rideStore';
+import { mockDriver } from '@/services/mockData';
+import wsService from '@/services/websocket';
 
 const STATUS_CONFIG = {
   searching: { text: 'Finding drivers...', progress: 20, color: 'text-primary' },

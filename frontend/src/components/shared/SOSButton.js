@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { AlertCircle, Phone, Share2, X } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../ui/dialog';
+import { Button } from '@/components/ui/button';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 import { toast } from 'sonner';
-import { api } from '../../services/api';
+import { api } from '@/services/api';
 
 export const SOSButton = ({ rideId, currentLocation, variant = 'floating' }) => {
   const [isOpen, setIsOpen] = useState(false);

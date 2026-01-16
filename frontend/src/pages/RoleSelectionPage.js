@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Car, User, Users } from 'lucide-react';
-import { Button } from './components/ui/button';
-import { Card, CardContent } from './components/ui/card';
-import { useAuthStore } from './store/authStore';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { useAuthStore } from '@/store/authStore';
 import { toast } from 'sonner';
 
 export const RoleSelectionPage = () => {

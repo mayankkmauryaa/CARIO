@@ -1,11 +1,11 @@
 import React, { useState } from 'react';
 import { Star } from 'lucide-react';
-import { Button } from '../ui/button';
-import { Textarea } from '../ui/textarea';
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '../ui/dialog';
-import { Badge } from '../ui/badge';
+import { Button } from '@/components/ui/button';
+import { Textarea } from '@/components/ui/textarea';
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from '@/components/ui/dialog';
+import { Badge } from '@/components/ui/badge';
 import { toast } from 'sonner';
-import { api } from '../../services/api';
+import { api } from '@/services/api';
 
 const RATING_TAGS = {
   5: ['Excellent', 'Professional', 'Clean', 'On Time', 'Friendly'],

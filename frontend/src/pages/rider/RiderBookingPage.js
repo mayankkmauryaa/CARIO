@@ -1,14 +1,14 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { ArrowLeft, Users, Zap } from 'lucide-react';
-import { Button } from '../../components/ui/button';
-import { Card, CardContent } from '../../components/ui/card';
-import { Slider } from '../../components/ui/slider';
-import { Badge } from '../../components/ui/badge';
-import { Separator } from '../../components/ui/separator';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import { Slider } from '@/components/ui/slider';
+import { Badge } from '@/components/ui/badge';
+import { Separator } from '@/components/ui/separator';
 import { toast } from 'sonner';
-import { useRideStore } from '../../store/rideStore';
-import { mockAPI, mockFareEstimate } from '../../services/mockData';
+import { useRideStore } from '@/store/rideStore';
+import { mockAPI, mockFareEstimate } from '@/services/mockData';
 
 const VEHICLE_TYPES = [
   { id: 'mini', name: 'Mini', icon: '🚗', capacity: 4, desc: 'Affordable' },
