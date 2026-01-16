@@ -34,7 +34,7 @@ function App() {
           {/* Public Routes */}
           <Route path="/login" element={<LoginPage />} />
           <Route path="/verify-otp" element={<VerifyOTPPage />} />
-          
+
           {/* Role Selection */}
           <Route
             path="/role-selection"
@@ -83,7 +83,7 @@ function App() {
 
           {/* Default Route */}
           <Route path="/" element={<Navigate to={getDefaultRoute()} replace />} />
-          
+
           {/* 404 */}
           <Route path="*" element={<Navigate to={getDefaultRoute()} replace />} />
         </Routes>

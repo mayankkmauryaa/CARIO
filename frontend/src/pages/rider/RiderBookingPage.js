@@ -19,7 +19,7 @@ const VEHICLE_TYPES = [
 export const RiderBookingPage = () => {
   const navigate = useNavigate();
   const { pickup, dropoff, vehicleType, setVehicleType, setFareEstimate, setOfferedFare, setCurrentRide, fareEstimate, offeredFare } = useRideStore();
-  
+
   const [isLoading, setIsLoading] = useState(false);
   const [isBooking, setIsBooking] = useState(false);
   const [estimate, setEstimate] = useState(null);
@@ -64,7 +64,7 @@ export const RiderBookingPage = () => {
         distance: estimate.distance,
         estimatedDuration: estimate.estimatedDuration
       });
-      
+
       setCurrentRide(ride);
       setOfferedFare(customFare[0]);
       toast.success('Searching for drivers...');
@@ -113,11 +113,10 @@ export const RiderBookingPage = () => {
             {VEHICLE_TYPES.map((vehicle) => (
               <Card
                 key={vehicle.id}
-                className={`cursor-pointer transition-all ${
-                  vehicleType === vehicle.id
+                className={`cursor-pointer transition-all ${vehicleType === vehicle.id
                     ? 'border-primary ring-2 ring-primary ring-offset-2'
                     : 'hover:border-primary/50'
-                }`}
+                  }`}
                 onClick={() => setVehicleType(vehicle.id)}
               >
                 <CardContent className="p-4 flex items-center gap-4">

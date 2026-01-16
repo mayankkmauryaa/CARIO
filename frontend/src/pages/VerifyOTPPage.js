@@ -51,7 +51,7 @@ export const VerifyOTPPage = () => {
 
   const handleResendOTP = async () => {
     if (resendTimer > 0) return;
-    
+
     try {
       await mockAPI.auth.sendOTP(phoneNumber);
       toast.success('OTP resent successfully!');

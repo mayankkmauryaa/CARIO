@@ -187,13 +187,13 @@ export const mockAPI = {
       throw new Error('Invalid OTP');
     }
   },
-  
+
   rides: {
     estimate: async (pickup, dropoff, vehicleType) => {
       await delay(1500);
       return mockFareEstimate;
     },
-    
+
     create: async (rideData) => {
       await delay(2000);
       return {
@@ -203,13 +203,13 @@ export const mockAPI = {
         status: 'searching'
       };
     },
-    
+
     get: async (rideId) => {
       await delay(500);
       return mockRide;
     }
   },
-  
+
   driver: {
     getEarnings: async () => {
       await delay(500);

@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { MapPin, Navigation } from 'lucide-react';
 
-export const MapMock = ({ 
-  pickup, 
-  dropoff, 
-  driverLocation, 
-  route, 
+export const MapMock = ({
+  pickup,
+  dropoff,
+  driverLocation,
+  route,
   className = '',
-  showControls = true 
+  showControls = true
 }) => {
   const [animatedDriver, setAnimatedDriver] = useState(driverLocation);
   const canvasRef = useRef(null);
@@ -15,7 +15,7 @@ export const MapMock = ({
   // Animate driver movement
   useEffect(() => {
     if (!driverLocation) return;
-    
+
     const animate = () => {
       setAnimatedDriver(prev => {
         if (!prev) return driverLocation;
@@ -140,7 +140,7 @@ export const MapMock = ({
         ctx.strokeStyle = 'white';
         ctx.lineWidth = 3;
         ctx.stroke();
-        
+
         // Pulse effect
         ctx.strokeStyle = 'hsl(var(--success) / 0.3)';
         ctx.lineWidth = 2;

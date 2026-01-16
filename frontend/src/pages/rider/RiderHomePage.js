@@ -15,7 +15,7 @@ export const RiderHomePage = () => {
   const navigate = useNavigate();
   const { user } = useAuthStore();
   const { setPickup, setDropoff, pickup, dropoff } = useRideStore();
-  
+
   const [pickupText, setPickupText] = useState('');
   const [dropoffText, setDropoffText] = useState('');
   const [currentLocation, setCurrentLocation] = useState({ lat: 37.7749, lng: -122.4194 });
@@ -85,7 +85,7 @@ export const RiderHomePage = () => {
         <Card className="shadow-lg">
           <CardContent className="p-6 space-y-4">
             <h2 className="text-lg font-semibold">Where to?</h2>
-            
+
             {/* Pickup Input */}
             <div className="relative">
               <MapPin className="absolute left-3 top-1/2 -translate-y-1/2 w-5 h-5 text-primary" />
@@ -93,7 +93,7 @@ export const RiderHomePage = () => {
                 placeholder="Pickup location"
                 value={pickupText}
                 onChange={(e) => setPickupText(e.target.value)}
-                onFocus={() => {}}
+                onFocus={() => { }}
                 className="pl-10 h-12"
               />
             </div>
@@ -105,7 +105,7 @@ export const RiderHomePage = () => {
                 placeholder="Where to?"
                 value={dropoffText}
                 onChange={(e) => setDropoffText(e.target.value)}
-                onFocus={() => {}}
+                onFocus={() => { }}
                 className="pl-10 h-12"
               />
             </div>
@@ -158,7 +158,7 @@ export const RiderHomePage = () => {
             <TabsTrigger value="recent">Recent Rides</TabsTrigger>
             <TabsTrigger value="suggestions">Suggestions</TabsTrigger>
           </TabsList>
-          
+
           <TabsContent value="recent" className="space-y-3 mt-4">
             {mockRideHistory.slice(0, 3).map((ride) => (
               <Card key={ride.id} className="hover:shadow-md transition-shadow">

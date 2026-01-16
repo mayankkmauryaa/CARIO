@@ -12,8 +12,8 @@ export const ProtectedRoute = ({ children, requireRole }) => {
 
   // Check role requirement
   if (requireRole) {
-    const hasRequiredRole = 
-      role === requireRole || 
+    const hasRequiredRole =
+      role === requireRole ||
       (role === 'both' && (requireRole === 'rider' || requireRole === 'driver'));
 
     if (!hasRequiredRole) {

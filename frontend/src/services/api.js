@@ -32,24 +32,24 @@ apiClient.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;
-    
+
     // Handle 401 - Token expired
     if (error.response?.status === 401 && !originalRequest._retry) {
       originalRequest._retry = true;
-      
+
       try {
         const refreshToken = useAuthStore.getState().refreshToken;
         const { data } = await axios.post(`${API_BASE}/auth/refresh-token`, {
           refreshToken
         });
-        
+
         useAuthStore.getState().setAuth(
           data.user,
           data.accessToken,
           data.refreshToken,
           data.user.role
         );
-        
+
         originalRequest.headers.Authorization = `Bearer ${data.accessToken}`;
         return apiClient(originalRequest);
       } catch (refreshError) {
@@ -58,7 +58,7 @@ apiClient.interceptors.response.use(
         return Promise.reject(refreshError);
       }
     }
-    
+
     return Promise.reject(error);
   }
 );
@@ -74,7 +74,7 @@ export const api = {
     logout: () => apiClient.post('/auth/logout'),
     refreshToken: (refreshToken) => apiClient.post('/auth/refresh-token', { refreshToken })
   },
-  
+
   // User APIs
   user: {
     getProfile: () => apiClient.get('/users/profile'),
@@ -84,7 +84,7 @@ export const api = {
       headers: { 'Content-Type': 'multipart/form-data' }
     })
   },
-  
+
   // Rider APIs
   rider: {
     getProfile: (riderId) => apiClient.get(`/riders/${riderId}`),
@@ -93,7 +93,7 @@ export const api = {
     getSavedLocations: () => apiClient.get('/riders/saved-locations'),
     addSavedLocation: (location) => apiClient.post('/riders/saved-locations', location)
   },
-  
+
   // Driver APIs
   driver: {
     getProfile: (driverId) => apiClient.get(`/drivers/${driverId}`),
@@ -105,7 +105,7 @@ export const api = {
     rejectRide: (rideId) => apiClient.post('/drivers/reject-ride', { rideId }),
     updateLocation: (location) => apiClient.post('/drivers/location', location)
   },
-  
+
   // Ride APIs
   rides: {
     estimate: (pickup, dropoff, vehicleType) => apiClient.post('/rides/estimate', {
@@ -124,7 +124,7 @@ export const api = {
     startRide: (rideId) => apiClient.post(`/rides/${rideId}/start`),
     completeRide: (rideId) => apiClient.post(`/rides/${rideId}/complete`)
   },
-  
+
   // Fare APIs
   fares: {
     calculate: (params) => apiClient.post('/fares/calculate', params),
@@ -133,7 +133,7 @@ export const api = {
       userOfferedFare
     })
   },
-  
+
   // Safety APIs
   safety: {
     triggerSOS: (rideId, location) => apiClient.post('/safety/sos', {
@@ -146,7 +146,7 @@ export const api = {
     }),
     getRideShare: (shareToken) => apiClient.get(`/safety/ride-share/${shareToken}`)
   },
-  
+
   // Payment APIs
   payment: {
     initiate: (rideId, paymentMethod) => apiClient.post('/payments/initiate', {
@@ -156,7 +156,7 @@ export const api = {
     getStatus: (transactionId) => apiClient.get(`/payments/${transactionId}/status`),
     refund: (rideId) => apiClient.post('/payments/refund', { rideId })
   },
-  
+
   // Wallet APIs
   wallet: {
     getBalance: () => apiClient.get('/wallet/balance'),

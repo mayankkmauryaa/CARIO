@@ -14,7 +14,7 @@ export const LoginPage = () => {
 
   const handleSendOTP = async (e) => {
     e.preventDefault();
-    
+
     if (!phoneNumber || phoneNumber.length < 10) {
       toast.error('Please enter a valid phone number');
       return;

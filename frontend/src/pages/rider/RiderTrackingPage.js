@@ -25,7 +25,7 @@ const STATUS_CONFIG = {
 export const RiderTrackingPage = () => {
   const navigate = useNavigate();
   const { currentRide, rideStatus, driver, driverLocation, eta, setDriver, updateRideStatus } = useRideStore();
-  
+
   const [showRatingDialog, setShowRatingDialog] = useState(false);
   const [simulatedLocation, setSimulatedLocation] = useState(null);
 
@@ -49,7 +49,7 @@ export const RiderTrackingPage = () => {
       setDriver(mockDriver);
       updateRideStatus('driver_assigned');
       toast.success('Driver assigned!');
-      
+
       // Simulate driver location updates
       const locationInterval = setInterval(() => {
         setSimulatedLocation({
@@ -140,7 +140,7 @@ export const RiderTrackingPage = () => {
                     {driver.fullName?.charAt(0)}
                   </div>
                 </Avatar>
-                
+
                 <div className="flex-1">
                   <p className="font-semibold text-lg">{driver.fullName}</p>
                   <p className="text-sm text-muted-foreground">
@@ -179,7 +179,7 @@ export const RiderTrackingPage = () => {
                 <p className="font-medium">{currentRide?.pickup?.address}</p>
               </div>
             </div>
-            
+
             <div className="flex items-start gap-3">
               <div className="w-3 h-3 bg-destructive mt-1.5" />
               <div className="flex-1">

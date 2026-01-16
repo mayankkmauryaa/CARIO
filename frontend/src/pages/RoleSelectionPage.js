@@ -43,7 +43,7 @@ export const RoleSelectionPage = () => {
 
     setRole(selectedRole);
     toast.success(`Welcome as ${selectedRole === 'both' ? 'Rider & Driver' : selectedRole}!`);
-    
+
     // Navigate based on role
     if (selectedRole === 'rider' || selectedRole === 'both') {
       navigate('/rider');
@@ -70,20 +70,18 @@ export const RoleSelectionPage = () => {
             return (
               <Card
                 key={role.id}
-                className={`cursor-pointer transition-all duration-200 hover:shadow-lg ${
-                  isSelected
+                className={`cursor-pointer transition-all duration-200 hover:shadow-lg ${isSelected
                     ? 'border-primary shadow-md ring-2 ring-primary ring-offset-2'
                     : 'border-border hover:border-primary/50'
-                }`}
+                  }`}
                 onClick={() => setSelectedRole(role.id)}
               >
                 <CardContent className="p-6 space-y-4">
                   <div
-                    className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors ${
-                      isSelected
+                    className={`w-14 h-14 rounded-2xl flex items-center justify-center transition-colors ${isSelected
                         ? 'bg-primary text-primary-foreground'
                         : 'bg-muted text-muted-foreground'
-                    }`}
+                      }`}
                   >
                     <Icon className="w-7 h-7" />
                   </div>
@@ -102,9 +100,8 @@ export const RoleSelectionPage = () => {
                         className="text-sm flex items-center gap-2"
                       >
                         <div
-                          className={`w-1.5 h-1.5 rounded-full ${
-                            isSelected ? 'bg-primary' : 'bg-muted-foreground'
-                          }`}
+                          className={`w-1.5 h-1.5 rounded-full ${isSelected ? 'bg-primary' : 'bg-muted-foreground'
+                            }`}
                         />
                         <span className="text-muted-foreground">{feature}</span>
                       </li>

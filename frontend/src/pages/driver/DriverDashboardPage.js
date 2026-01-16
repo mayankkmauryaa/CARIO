@@ -15,7 +15,7 @@ import MapMock from '@/components/shared/MapMock';
 export const DriverDashboardPage = () => {
   const navigate = useNavigate();
   const { user } = useAuthStore();
-  const {isOnline, toggleOnline, activeRide, currentLocation } = useDriverStore();
+  const { isOnline, toggleOnline, activeRide, currentLocation } = useDriverStore();
   const [earnings, setEarnings] = useState(mockDriverEarnings);
   const [rideRequest, setRideRequest] = useState(null);
   const [requestTimer, setRequestTimer] = useState(15);

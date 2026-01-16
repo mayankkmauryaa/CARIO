@@ -88,11 +88,10 @@ export const RatingDialog = ({ isOpen, onClose, rideId, driverName, driverPhoto 
                   className="transition-transform hover:scale-110"
                 >
                   <Star
-                    className={`w-12 h-12 transition-colors ${
-                      star <= displayRating
+                    className={`w-12 h-12 transition-colors ${star <= displayRating
                         ? 'fill-yellow-400 text-yellow-400'
                         : 'fill-none text-muted-foreground'
-                    }`}
+                      }`}
                   />
                 </button>
               ))}

@@ -10,7 +10,7 @@ export const useAuthStore = create(
       refreshToken: null,
       isAuthenticated: false,
       role: null, // 'rider' | 'driver' | 'both'
-      
+
       // Actions
       setAuth: (user, token, refreshToken, role) => set({
         user,
@@ -19,13 +19,13 @@ export const useAuthStore = create(
         isAuthenticated: true,
         role: role || user?.role
       }),
-      
+
       setRole: (role) => set({ role }),
-      
+
       updateUser: (userData) => set((state) => ({
         user: { ...state.user, ...userData }
       })),
-      
+
       logout: () => set({
         user: null,
         token: null,
@@ -33,7 +33,7 @@ export const useAuthStore = create(
         isAuthenticated: false,
         role: null
       }),
-      
+
       // Getters
       getToken: () => get().token,
       getRole: () => get().role,
