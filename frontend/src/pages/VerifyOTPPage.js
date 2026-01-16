@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
-import { Button } from '../components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '../components/ui/card';
-import { InputOTP, InputOTPGroup, InputOTPSlot } from '../components/ui/input-otp';
+import { Button } from './components/ui/button';
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from './components/ui/card';
+import { InputOTP, InputOTPGroup, InputOTPSlot } from './components/ui/input-otp';
 import { toast } from 'sonner';
-import { mockAPI } from '../services/mockData';
-import { useAuthStore } from '../store/authStore';
+import { mockAPI } from './services/mockData';
+import { useAuthStore } from './store/authStore';
 
 export const VerifyOTPPage = () => {
   const navigate = useNavigate();
