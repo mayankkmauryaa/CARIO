@@ -2,10 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+
 body {
     margin: 0;
-    font-family:
-        -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
         "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
         sans-serif;
     -webkit-font-smoothing: antialiased;
@@ -19,57 +20,130 @@ code {
 
 @layer base {
     :root {
-        --background: 0 0% 100%;
-        --foreground: 0 0% 3.9%;
+        /* CARIO Teal/Cyan Brand System - Modern Mobility Design */
+        
+        /* Core Brand Colors */
+        --primary: 189 100% 31%;
+        --primary-foreground: 0 0% 100%;
+        --primary-hover: 189 100% 25%;
+        --primary-light: 189 50% 60%;
+        
+        /* Secondary & Accents */
+        --secondary: 170 60% 45%;
+        --secondary-foreground: 0 0% 100%;
+        --accent: 180 70% 55%;
+        --accent-foreground: 0 0% 10%;
+        
+        /* Neutral Palette */
+        --background: 200 10% 98%;
+        --foreground: 200 5% 20%;
         --card: 0 0% 100%;
-        --card-foreground: 0 0% 3.9%;
+        --card-foreground: 200 5% 20%;
+        
+        /* UI Elements */
+        --muted: 200 10% 95%;
+        --muted-foreground: 200 5% 45%;
+        --border: 200 10% 90%;
+        --input: 200 10% 92%;
+        --ring: 189 100% 31%;
+        
+        /* Popover & Dialogs */
         --popover: 0 0% 100%;
-        --popover-foreground: 0 0% 3.9%;
-        --primary: 0 0% 9%;
-        --primary-foreground: 0 0% 98%;
-        --secondary: 0 0% 96.1%;
-        --secondary-foreground: 0 0% 9%;
-        --muted: 0 0% 96.1%;
-        --muted-foreground: 0 0% 45.1%;
-        --accent: 0 0% 96.1%;
-        --accent-foreground: 0 0% 9%;
-        --destructive: 0 84.2% 60.2%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 89.8%;
-        --input: 0 0% 89.8%;
-        --ring: 0 0% 3.9%;
-        --chart-1: 12 76% 61%;
-        --chart-2: 173 58% 39%;
-        --chart-3: 197 37% 24%;
-        --chart-4: 43 74% 66%;
-        --chart-5: 27 87% 67%;
+        --popover-foreground: 200 5% 20%;
+        
+        /* States */
+        --success: 142 76% 36%;
+        --success-foreground: 0 0% 100%;
+        --warning: 38 92% 50%;
+        --warning-foreground: 0 0% 100%;
+        --destructive: 0 84% 60%;
+        --destructive-foreground: 0 0% 100%;
+        
+        /* Map & Tracking */
+        --map-route: 189 100% 31%;
+        --map-marker: 170 60% 45%;
+        --map-driver: 142 76% 36%;
+        
+        /* Shadows & Elevation */
+        --shadow-sm: 0 1px 2px 0 hsl(189 100% 31% / 0.05);
+        --shadow-md: 0 4px 6px -1px hsl(189 100% 31% / 0.1);
+        --shadow-lg: 0 10px 15px -3px hsl(189 100% 31% / 0.1);
+        --shadow-glow: 0 0 20px hsl(189 100% 31% / 0.15);
+        
+        /* Transitions */
+        --transition-base: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-smooth: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+        
+        /* Border Radius */
         --radius: 0.5rem;
+        --radius-lg: 0.75rem;
+        --radius-xl: 1rem;
+        
+        /* Charts */
+        --chart-1: 189 100% 31%;
+        --chart-2: 170 60% 45%;
+        --chart-3: 180 70% 55%;
+        --chart-4: 142 76% 36%;
+        --chart-5: 38 92% 50%;
     }
+    
     .dark {
-        --background: 0 0% 3.9%;
-        --foreground: 0 0% 98%;
-        --card: 0 0% 3.9%;
-        --card-foreground: 0 0% 98%;
-        --popover: 0 0% 3.9%;
-        --popover-foreground: 0 0% 98%;
-        --primary: 0 0% 98%;
-        --primary-foreground: 0 0% 9%;
-        --secondary: 0 0% 14.9%;
-        --secondary-foreground: 0 0% 98%;
-        --muted: 0 0% 14.9%;
-        --muted-foreground: 0 0% 63.9%;
-        --accent: 0 0% 14.9%;
-        --accent-foreground: 0 0% 98%;
-        --destructive: 0 62.8% 30.6%;
-        --destructive-foreground: 0 0% 98%;
-        --border: 0 0% 14.9%;
-        --input: 0 0% 14.9%;
-        --ring: 0 0% 83.1%;
-        --chart-1: 220 70% 50%;
-        --chart-2: 160 60% 45%;
-        --chart-3: 30 80% 55%;
-        --chart-4: 280 65% 60%;
-        --chart-5: 340 75% 55%;
+        /* Dark Mode - CARIO Night Theme */
+        
+        /* Core Brand Colors (Adjusted for dark backgrounds) */
+        --primary: 189 85% 45%;
+        --primary-foreground: 0 0% 100%;
+        --primary-hover: 189 85% 55%;
+        --primary-light: 189 50% 35%;
+        
+        /* Secondary & Accents */
+        --secondary: 170 45% 35%;
+        --secondary-foreground: 0 0% 100%;
+        --accent: 180 60% 45%;
+        --accent-foreground: 0 0% 100%;
+        
+        /* Neutral Palette */
+        --background: 200 15% 8%;
+        --foreground: 0 0% 95%;
+        --card: 200 12% 12%;
+        --card-foreground: 0 0% 95%;
+        
+        /* UI Elements */
+        --muted: 200 10% 18%;
+        --muted-foreground: 200 5% 60%;
+        --border: 200 10% 20%;
+        --input: 200 10% 18%;
+        --ring: 189 85% 45%;
+        
+        /* Popover & Dialogs */
+        --popover: 200 12% 12%;
+        --popover-foreground: 0 0% 95%;
+        
+        /* States */
+        --success: 142 70% 45%;
+        --success-foreground: 0 0% 100%;
+        --warning: 38 85% 55%;
+        --warning-foreground: 0 0% 10%;
+        --destructive: 0 72% 51%;
+        --destructive-foreground: 0 0% 100%;
+        
+        /* Map & Tracking */
+        --map-route: 189 85% 45%;
+        --map-marker: 170 45% 35%;
+        --map-driver: 142 70% 45%;
+        
+        /* Shadows & Elevation */
+        --shadow-sm: 0 1px 2px 0 hsl(0 0% 0% / 0.3);
+        --shadow-md: 0 4px 6px -1px hsl(0 0% 0% / 0.4);
+        --shadow-lg: 0 10px 15px -3px hsl(0 0% 0% / 0.5);
+        --shadow-glow: 0 0 20px hsl(189 85% 45% / 0.25);
+        
+        /* Charts */
+        --chart-1: 189 85% 45%;
+        --chart-2: 170 45% 35%;
+        --chart-3: 180 60% 45%;
+        --chart-4: 142 70% 45%;
+        --chart-5: 38 85% 55%;
     }
 }
 
